@@ -1,0 +1,32 @@
+<div>
+    <hr>
+    {% if not ticket %}
+        <h1>The ticket you're looking for doesnt exist</h1>
+    {% else %}
+        <h1>{{ ticket.title }}</h1>
+        <h2>{{ ticket.description }}</h2>
+        <h4>{{ ticket.created_at }}</h4>
+        <br>
+        <h3>status: {{ ticket.status }}</h3>
+        <h4>assigned to: {{ ticket.user_assigned }}</h4>
+        <h4>completed by: {{ ticket.completed_by }}</h4>
+        <h4>filed by: <a href='/{{ ticket.user_that_filed }}'>{{ ticket.user_that_filed }}</a></h4>
+        <hr>
+    {% endif %}
+
+    <a href='/ticket/{{ ticket.id }}/edit'>Edit</a>
+    <br>
+    <a href='/ticket/{{ticket.id}}/assignedtickets/'>assign this to yourself</a>
+    <br>
+    <a href='/ticket/{{ticket.id}}/completedtickets/'>complete this ticket</a>
+    <br>
+    <a href='/ticket/{{ ticket.id }}/invalidtickets/'>mark this ticket invalid</a>
+    <br>
+    <a href='/index/'>go back to homepage</a>
+
+</div>
+
+
+
+
+

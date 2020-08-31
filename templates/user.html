@@ -1,0 +1,23 @@
+<h1>{{ user }}</h1>
+<a href='/index/'>go back to homepage</a>
+
+<h1> Tickets Filed:</h1>
+<ul>
+    {% for ticket in filed %}
+    <li>{{ ticket.title }}</li>
+    {% endfor %}
+</ul>
+
+<h1>Assigned:</h1>
+<ul>
+    {% for ticket in assigned_to %}
+    <li>{{ ticket.title }}</li>
+    {% endfor %}
+</ul>
+
+<h1>Completed:</h1>
+<ul>
+    {% for ticket in completed_by %}
+    <li>{{ ticket.title }}</li>
+    {% endfor %}
+</ul>
